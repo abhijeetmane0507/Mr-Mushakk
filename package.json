@@ -1,0 +1,22 @@
+{
+  "name": "mr-mushakk",
+  "version": "2.0.0",
+  "description": "Mr Mushakk: stored-timetable Mumbai journey planner. No live tracking, no AI.",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "validate": "node scripts/validate.js",
+    "test": "node --test tests/engine.test.js",
+    "build": "node scripts/validate.js && node scripts/build.js"
+  },
+  "dependencies": {
+    "@getbrevo/brevo": "^6.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1"
+  }
+}

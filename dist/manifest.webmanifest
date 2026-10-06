@@ -1,0 +1,9 @@
+{
+  "name": "Mr Mushakk",
+  "short_name": "Mushakk",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090b12",
+  "theme_color": "#10131f",
+  "icons": []
+}

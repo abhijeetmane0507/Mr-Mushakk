@@ -1,0 +1,232 @@
+[
+ {
+  "id": "g001",
+  "name": "Lalbaugcha Raja",
+  "area": "Lalbaug",
+  "location": "GD Ambekar Marg, Lalbaug, Mumbai",
+  "nearest": "Chinchpokli / Currey Road",
+  "source": "Time Out Mumbai 2026",
+  "locationVerified": true
+ },
+ {
+  "id": "g002",
+  "name": "Mumbaicha Raja – Ganesh Galli",
+  "area": "Lalbaug",
+  "location": "Ganesh Galli, Lalbaug, Mumbai",
+  "nearest": "Currey Road",
+  "source": "Public 2026 Mumbai pandal guides",
+  "locationVerified": true
+ },
+ {
+  "id": "g003",
+  "name": "GSB Seva Mandal",
+  "area": "Matunga",
+  "location": "King's Circle / Matunga, Mumbai",
+  "nearest": "King's Circle / Matunga",
+  "source": "Public 2026 Mumbai pandal guides",
+  "locationVerified": true
+ },
+ {
+  "id": "g004",
+  "name": "Khetwadicha Ganraj",
+  "area": "Khetwadi, Girgaon",
+  "location": "Khetwadi, Girgaon, Mumbai",
+  "nearest": "Charni Road",
+  "source": "Public 2026 Mumbai pandal guides; also listed in Mid-Day 2026",
+  "locationVerified": true
+ },
+ {
+  "id": "g005",
+  "name": "Andhericha Raja",
+  "area": "Andheri West",
+  "location": "Andheri West, Mumbai",
+  "nearest": "Andheri / Azad Nagar Metro",
+  "source": "Public 2026 Mumbai pandal guides",
+  "locationVerified": true
+ },
+ {
+  "id": "g006",
+  "name": "Girgaoncha Raja",
+  "area": "Girgaon",
+  "location": "Girgaon, South Mumbai",
+  "nearest": "Charni Road / Girgaon Metro",
+  "source": "Public 2026 Mumbai pandal guides",
+  "locationVerified": true
+ },
+ {
+  "id": "g007",
+  "name": "Chinchpoklicha Chintamani",
+  "area": "Chinchpokli",
+  "location": "Chinchpokli, Mumbai",
+  "nearest": "Chinchpokli",
+  "source": "Public 2026 Mumbai pandal guides",
+  "locationVerified": true
+ },
+ {
+  "id": "g008",
+  "name": "Tejukayacha Raja",
+  "area": "Lalbaug",
+  "location": "Lalbaug, Mumbai",
+  "nearest": "Currey Road",
+  "source": "Public 2026 Mumbai pandal guides",
+  "locationVerified": true
+ },
+ {
+  "id": "g009",
+  "name": "Parelcha Raja",
+  "area": "Parel",
+  "location": "Parel, Mumbai",
+  "nearest": "Parel",
+  "source": "Public 2026 Mumbai pandal guides",
+  "locationVerified": true
+ },
+ {
+  "id": "g010",
+  "name": "Fortcha Icchapurti Raja",
+  "area": "Fort",
+  "location": "Fort, Mumbai",
+  "nearest": "CSMT",
+  "source": "Public 2026 Mumbai pandal guides",
+  "locationVerified": true
+ },
+ {
+  "id": "g012",
+  "name": "Girgaon Cha Raja (Nikadwari Lane Sarvajanik Shree Ganeshotsav Mandal)",
+  "area": "Girgaon",
+  "location": "Nikadwari Lane, Girgaon, Mumbai",
+  "nearest": "Charni Road",
+  "source": "Mid-Day 2026",
+  "possibleDuplicateOf": "g006",
+  "locationVerified": true
+ },
+ {
+  "id": "g013",
+  "name": "Shree Siddhivinayak Krupa Sarvjanik Ganeshutsav Mandal",
+  "area": "Mumbai",
+  "location": "Mumbai, Maharashtra",
+  "nearest": "",
+  "source": "Mid-Day 2026",
+  "locationVerified": false
+ },
+ {
+  "id": "g014",
+  "name": "Parshiwadi Mitra Mandal Sarvajanik Ganeshustav (Arthur Road Cha Raja)",
+  "area": "Arthur Road",
+  "location": "Arthur Road area, Mumbai",
+  "nearest": "",
+  "source": "Mid-Day 2026",
+  "locationVerified": true
+ },
+ {
+  "id": "g015",
+  "name": "Chinchpokli Sarvajanik Uthsav Mandal",
+  "area": "Chinchpokli",
+  "location": "Chinchpokli, Mumbai",
+  "nearest": "Chinchpokli",
+  "source": "Mid-Day 2026",
+  "locationVerified": true
+ },
+ {
+  "id": "g016",
+  "name": "Shantinagar Sarvajanik Ganeshotsav Mandal",
+  "area": "Mumbai",
+  "location": "Mumbai, Maharashtra",
+  "nearest": "",
+  "source": "Mid-Day 2026",
+  "locationVerified": false
+ },
+ {
+  "id": "g017",
+  "name": "Navi Amrutwadi Ganeshotsav Mandal",
+  "area": "Mumbai",
+  "location": "Mumbai, Maharashtra",
+  "nearest": "",
+  "source": "Mid-Day 2026",
+  "locationVerified": false
+ },
+ {
+  "id": "g018",
+  "name": "Parelcha Lambodar",
+  "area": "Parel",
+  "location": "Parel, Mumbai",
+  "nearest": "Parel",
+  "source": "Mid-Day 2026",
+  "locationVerified": true
+ },
+ {
+  "id": "g019",
+  "name": "Naviwadi Sarvajanik Ganeshutsav Mandal",
+  "area": "Mumbai",
+  "location": "Mumbai, Maharashtra",
+  "nearest": "",
+  "source": "Mid-Day 2026",
+  "locationVerified": false
+ },
+ {
+  "id": "g020",
+  "name": "Sheetal Friend's Circle",
+  "area": "Mumbai",
+  "location": "Mumbai, Maharashtra",
+  "nearest": "",
+  "source": "Mid-Day 2026",
+  "locationVerified": false
+ },
+ {
+  "id": "g021",
+  "name": "Sejal Park cha Raja",
+  "area": "Mumbai",
+  "location": "Mumbai, Maharashtra",
+  "nearest": "",
+  "source": "Mid-Day 2026",
+  "locationVerified": false
+ },
+ {
+  "id": "g022",
+  "name": "SHREE GANESH MITRA MANDAL, RAIPADA",
+  "area": "Raipada",
+  "location": "Raipada, Mumbai Suburban",
+  "nearest": "",
+  "source": "Mid-Day 2026",
+  "locationVerified": true
+ },
+ {
+  "id": "g023",
+  "name": "Maharashtra Utsav Mandal, Byculla",
+  "area": "Byculla",
+  "location": "Byculla, Mumbai",
+  "nearest": "Byculla",
+  "source": "Mid-Day 2026",
+  "locationVerified": true
+ },
+ {
+  "id": "g024",
+  "name": "Andhericha Mahaganpati",
+  "area": "Andheri",
+  "location": "Andheri, Mumbai",
+  "nearest": "Andheri",
+  "source": "Mid-Day 2026",
+  "locationVerified": true
+ },
+ {
+  "id": "g025",
+  "name": "Bappa Khetwadicha 10th Lane",
+  "area": "Khetwadi",
+  "location": "10th Lane, Khetwadi, Mumbai",
+  "nearest": "Charni Road",
+  "source": "Mid-Day 2026",
+  "locationVerified": true
+ },
+ {
+    "id": "g026",
+    "name": "TEST GANPATI MANDAL",
+    "area": "Test Area",
+    "location": "Test Address, Mumbai",
+    "nearest": "Test Station",
+    "source": "Manually added",
+    "locationVerified": true,
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Test+Address+Mumbai",
+    "latitude": 19.0000,
+    "longitude": 72.0000,
+     "photo": ""
+ }
+]

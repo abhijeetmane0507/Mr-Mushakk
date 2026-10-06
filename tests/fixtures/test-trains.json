@@ -1,0 +1,6 @@
+[
+ {"id":"T1","line":"TEST","service":"TEST-ONLY synthetic","from":"Alpha","to":"Omega","departure":"14:00","arrival":"14:40","days":"Mon-Sat","verified":true,"source":"synthetic test fixture - NOT real"},
+ {"id":"T2","line":"TEST","service":"TEST-ONLY synthetic","from":"Alpha","to":"Omega","departure":"14:15","arrival":"14:55","days":"Mon-Sat","verified":true,"source":"synthetic test fixture - NOT real"},
+ {"id":"T3","line":"TEST","service":"TEST-ONLY synthetic","from":"Alpha","to":"Omega","departure":"14:32","arrival":"15:12","days":"Mon-Sat","verified":true,"source":"synthetic test fixture - NOT real"},
+ {"id":"T4","line":"TEST","service":"TEST-ONLY synthetic (Sun only)","from":"Alpha","to":"Omega","departure":"14:20","arrival":"15:00","days":"Sun","verified":true,"source":"synthetic test fixture - NOT real"}
+]

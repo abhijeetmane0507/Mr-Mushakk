@@ -1,0 +1,38 @@
+{
+ "note": "Records removed from the visible lists because they are placeholders or mis-categorised. Not shown to users. Re-add only after verification.",
+ "devi_removed": [
+  {
+   "id": "d003",
+   "name": "Siddhivinayak Temple Festival Area",
+   "area": "Prabhadevi",
+   "location": "SK Bole Marg, Prabhadevi, Mumbai",
+   "nearest": "Prabhadevi",
+   "source": "Seed place; verify festival/mandal status"
+  },
+  {
+   "id": "d004",
+   "name": "Durga Puja / Devi Mandal Entry",
+   "area": "Powai",
+   "location": "Powai, Mumbai",
+   "nearest": "Powai",
+   "source": "Placeholder category; verify exact mandal"
+  },
+  {
+   "id": "d005",
+   "name": "Devi Mandal Entry",
+   "area": "Andheri",
+   "location": "Andheri, Mumbai",
+   "nearest": "Andheri",
+   "source": "Placeholder category; verify exact mandal"
+  }
+ ],
+ "ganpati_empty_slots_removed": 125,
+ "devi_empty_slots_removed": 45,
+ "ganpati_merged_duplicates": [
+  {
+   "removed": "g011",
+   "merged_into": "g004",
+   "reason": "same mandal, spelling variant (Khetwadi Cha Ganraj)"
+  }
+ ]
+}

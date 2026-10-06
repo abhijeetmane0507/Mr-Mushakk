@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mr Mushakk • Data Manager</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.dm{max-width:1400px;margin:auto;padding:35px 5%}.dm-head{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.dm h1{font-size:clamp(36px,5vw,62px);letter-spacing:-2px;margin:5px 0}.dm .muted{color:#9299b7}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}.dm-grid{display:grid;grid-template-columns:360px 1fr;gap:18px}.dataset-list{display:grid;gap:8px}.dataset-btn{text-align:left;background:#10131f;color:#eef1ff;border:1px solid #292e43;border-radius:12px;padding:13px;cursor:pointer}.dataset-btn.active{border-color:#8f9bff;background:#151a30}.dataset-btn b{display:block}.dataset-btn small{color:#9299b7}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-grid .full{grid-column:1/-1}.dm textarea{min-height:105px;resize:vertical}.dm .hint{font-size:12px;color:#9299b7;margin-top:5px}.records{margin-top:18px}.record{border:1px solid #292e43;background:#10131f;border-radius:14px;padding:14px;margin-top:8px}.record-head{display:flex;justify-content:space-between;gap:10px;align-items:start}.record pre{white-space:pre-wrap;word-break:break-word;color:#aeb5d0;font-size:11px;max-height:120px;overflow:auto}.status{margin:12px 0}.photo-preview{max-width:180px;max-height:130px;border-radius:10px;border:1px solid #30364f;object-fit:cover}.back{margin-bottom:12px;display:inline-block}.danger{background:#5a1f2b!important;color:#ffd5db!important}.ok{border-color:#2f6b4a!important}.small-note{font-size:12px;color:#9299b7;line-height:1.5}
+@media(max-width:900px){.dm-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="dm">
+  <a class="back" href="index.html">← Back to Mr Mushakk</a>
+  <div class="dm-head"><div><p class="eyebrow">MR MUSHAKK • DATA MANAGER</p><h1>Add data without editing code.</h1><p class="muted">Add train, BEST bus, Metro, fare and mandal records. Connect the project folder to save directly into its <code>data/</code> files.</p></div><button class="btn" id="connect">Connect project folder</button></div>
+  <div id="status" class="status"></div>
+  <div class="panel" style="margin-bottom:18px"><b>How this works</b><p class="small-note">1) Click <b>Connect project folder</b> and select the main <b>Mr-Mushakk</b> folder. 2) Choose a dataset. 3) Add/edit records. 4) Click <b>Save to project</b>. 5) Put mandal photos in <code>data/images/</code> automatically by selecting a photo in the form. If direct folder access is unavailable, use Download JSON and replace the matching file manually.</p><p class="small-note"><b>Important:</b> tick Verified only when you have checked the information against a reliable/official source. Google Maps links are Maps URLs and do not require a Maps API key.</p></div>
+  <div class="dm-grid">
+    <aside><div class="panel"><b>Datasets</b><div class="dataset-list" id="datasets"></div></div></aside>
+    <main><div class="panel"><div id="form"></div></div><div class="panel records"><div class="row" style="justify-content:space-between"><b id="recordsTitle">Records</b><button class="btn small secondary" id="download">Download JSON</button></div><div id="records"></div></div></main>
+  </div>
+</div>
+<script>
+'use strict';
+const DATASETS = {
+  trains:{file:'local-trains.json',label:'🚆 Local trains',kind:'train'},
+  buses:{file:'buses.json',label:'🚌 BEST buses',kind:'frequency'},
+  metro:{file:'metro.json',label:'🚇 Metro',kind:'frequency'},
+  fares:{file:'fares.json',label:'💰 Fares',kind:'fare'},
+  ganpati:{file:'ganpati.json',label:'🐘 Ganpati mandals',kind:'mandal'},
+  devi:{file:'devi.json',label:'🌺 Devi mandals',kind:'mandal'}
+};
+let active='trains', data={}, folder=null, editingId=null, selectedPhoto=null;
+const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function setStatus(t,cls=''){ $('status').innerHTML=t?`<div class="banner ${cls}">${t}</div>`:''; }
+function id(){return 'dm-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7)}
+function current(){return data[active]||[]}
+async function readFile(name){
+  if(!folder) return null;
+  const df=await folder.getDirectoryHandle('data',{create:false});
+  const f=await df.getFileHandle(name,{create:false});
+  return JSON.parse(await (await f.getFile()).text());
+}
+async function writeJson(name,obj){
+  if(!folder) return false;
+  const df=await folder.getDirectoryHandle('data',{create:true});
+  const h=await df.getFileHandle(name,{create:true}); const w=await h.createWritable();
+  await w.write(JSON.stringify(obj,null,2)+'\n'); await w.close(); return true;
+}
+async function copyPhoto(file,name){
+  const df=await folder.getDirectoryHandle('data',{create:true});
+  const img=await df.getDirectoryHandle('images',{create:true});
+  const h=await img.getFileHandle(name,{create:true}); const w=await h.createWritable(); await w.write(await file.arrayBuffer()); await w.close();
+  return 'images/'+name;
+}
+async function loadAll(){
+  for(const [k,c] of Object.entries(DATASETS)){
+    try{ const x=folder?await readFile(c.file):null; data[k]=Array.isArray(x)?x:[]; }
+    catch(e){ data[k]=data[k]||[]; }
+  }
+  renderDatasets(); renderForm(); renderRecords();
+}
+function renderDatasets(){ $('datasets').innerHTML=Object.entries(DATASETS).map(([k,c])=>`<button class="dataset-btn ${k===active?'active':''}" data-ds="${k}"><b>${c.label}</b><small>${(data[k]||[]).length} records • ${c.file}</small></button>`).join(''); }
+function input(id,label,value='',type='text',extra=''){return `<label>${label}<input id="${id}" type="${type}" value="${esc(value)}" ${extra}></label>`}
+function check(id,label,value){return `<label class="inline"><input id="${id}" type="checkbox" ${value?'checked':''}> ${label}</label>`}
+function commonSource(r){return `${input('id','ID',r.id||id())}${input('source','Source',r.source||'')}${check('verified','Verified data',r.verified===true)}`}
+function renderForm(r={}){
+  editingId=r.id||null; selectedPhoto=null;
+  let h=`<div class="section-title"><div><span class="eyebrow">${esc(DATASETS[active].label)}</span><h2>${editingId?'Edit record':'Add record'}</h2></div>${editingId?'<button class="btn small secondary" id="cancel">Cancel edit</button>':''}</div>`;
+  if(DATASETS[active].kind==='train') h+=`<div class="form-grid">${commonSource(r)}${input('line','Line',r.line||'')}${input('service','Service / train name',r.service||'')}${input('from','From station',r.from||'')}${input('to','To station',r.to||'')}${input('departure','Departure (HH:MM)',r.departure||'','time')}${input('arrival','Arrival (HH:MM)',r.arrival||'','time')}${input('days','Days',r.days||'Mon-Sun')}${input('direction','Direction',r.direction||'')}${input('type','Type',r.type||'')}`+
+    `<label class="full">Stops JSON <textarea id="stops" placeholder='[{"station":"Bhandup","time":"08:10"},{"station":"Ghatkopar","time":"08:22"}]'>${esc(r.stops?JSON.stringify(r.stops,null,2):'')}</textarea><span class="hint">Optional. Use this when one stored train service should be usable between intermediate stations.</span></label></div>`;
+  else if(DATASETS[active].kind==='frequency') h+=`<div class="form-grid">${commonSource(r)}${input('route','Route / line',r.route||r.line||'')}${input('line','Line (optional)',r.line||'')}${input('from','From',r.from||'')}${input('to','To',r.to||'')}${input('first','First service (HH:MM)',r.first||'','time')}${input('last','Last service (HH:MM)',r.last||'','time')}${input('frequency_min','Frequency (minutes)',r.frequency_min||'','number','min="1"')}${input('travel_min','Travel time (minutes)',r.travel_min||'','number','min="1"')}${input('days','Days',r.days||'Mon-Sun')}</div>`;
+  else if(DATASETS[active].kind==='fare') h+=`<div class="form-grid">${commonSource(r)}<label>Mode<select id="mode">${['Local Train','BEST Bus','Metro'].map(x=>`<option ${r.mode===x?'selected':''}>${x}</option>`).join('')}</select></label>${input('from','From station/stop',r.from||'')}${input('to','To station/stop',r.to||'')}${input('fare','Fare (₹)',r.fare??'','number','min="0" step="1"')}</div>`;
+  else h+=`<div class="form-grid">${commonSource(r)}${input('name','Mandal / temple name',r.name||'')}${input('area','Area',r.area||'')}${input('location','Address / location',r.location||'')}${input('nearest','Nearest railway / metro station',r.nearest||'')}${input('mapsUrl','Google Maps URL',r.mapsUrl||'')}${input('sourceUrl','Source URL',r.sourceUrl||'')}${input('latitude','Latitude',r.latitude??'','number','step="any"')}${input('longitude','Longitude',r.longitude??'','number','step="any"')}<label class="inline full"><input id="locationVerified" type="checkbox" ${r.locationVerified!==false?'checked':''}> Exact location verified</label><label class="full">Photo path / URL<input id="photo" value="${esc(r.photo||'')}" placeholder="images/lalbaugcha-raja.jpg or https://..."><span class="hint">With a connected project folder, choose a photo below and it will be copied into data/images/ automatically.</span></label><label class="full">Choose mandal photo<input id="photoFile" type="file" accept="image/*"><span id="photoName" class="hint">No new photo selected.</span></label><div class="full"><img id="photoPreview" class="photo-preview" style="display:none"></div></div>`;
+  h+=`<div class="row" style="margin-top:16px"><button class="btn" id="save">${editingId?'Update record':'Add record'}</button><button class="btn secondary" id="saveProject">Save to project</button><button class="btn secondary" id="downloadTop">Download ${DATASETS[active].file}</button></div><p class="small-note">Adding a record here changes the Data Manager's copy. <b>Save to project</b> writes the JSON directly when you connected the project folder. Otherwise use Download JSON and replace the matching file.</p>`;
+  $('form').innerHTML=h;
+  $('save').onclick=saveRecord; $('saveProject').onclick=saveProject; $('downloadTop').onclick=downloadCurrent; if($('cancel'))$('cancel').onclick=()=>{editingId=null;renderForm()};
+  if($('photoFile')) $('photoFile').onchange=async e=>{selectedPhoto=e.target.files[0]||null;if(selectedPhoto){$('photoName').textContent=selectedPhoto.name;const u=URL.createObjectURL(selectedPhoto);$('photoPreview').src=u;$('photoPreview').style.display='block'}};
+}
+function collect(){
+  const c=DATASETS[active].kind, r={id:$('id').value.trim()||id()};
+  r.verified=$('verified').checked; r.source=$('source').value.trim();
+  if(c==='train') Object.assign(r,{line:$('line').value.trim(),service:$('service').value.trim(),from:$('from').value.trim(),to:$('to').value.trim(),departure:$('departure').value,arrival:$('arrival').value,days:$('days').value.trim(),direction:$('direction').value.trim(),type:$('type').value.trim()});
+  if(c==='train') {const x=$('stops').value.trim();if(x){try{r.stops=JSON.parse(x)}catch(e){throw Error('Stops JSON is not valid.')}}}
+  if(c==='frequency') Object.assign(r,{route:$('route').value.trim(),from:$('from').value.trim(),to:$('to').value.trim(),first:$('first').value,last:$('last').value,frequency_min:Number($('frequency_min').value),travel_min:Number($('travel_min').value),days:$('days').value.trim()});
+  if(c==='frequency'&&active==='metro'&&$('line').value.trim()) r.line=$('line').value.trim();
+  if(c==='fare') Object.assign(r,{mode:$('mode').value,from:$('from').value.trim(),to:$('to').value.trim(),fare:Number($('fare').value)});
+  if(c==='mandal') Object.assign(r,{name:$('name').value.trim(),area:$('area').value.trim(),location:$('location').value.trim(),nearest:$('nearest').value.trim(),mapsUrl:$('mapsUrl').value.trim(),sourceUrl:$('sourceUrl').value.trim(),latitude:$('latitude').value===''?null:Number($('latitude').value),longitude:$('longitude').value===''?null:Number($('longitude').value),locationVerified:$('locationVerified').checked,photo:$('photo').value.trim()});
+  return r;
+}
+async function saveRecord(){
+  try{let r=collect();if(!r.id)r.id=id();if(DATASETS[active].kind==='mandal'&&!r.name)throw Error('Mandal name is required.');if(r.verified&&!r.source)throw Error('Add a source before marking data Verified.');
+    if(DATASETS[active].kind==='mandal'&&selectedPhoto){if(!folder)throw Error('Connect the project folder before copying a photo, or enter a photo URL/path manually.');const ext=(selectedPhoto.name.match(/\.[^.]+$/)||['.jpg'])[0].toLowerCase();const base=(r.name||r.id).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||r.id;const filename=base+ext;r.photo=await copyPhoto(selectedPhoto,filename)}
+    const arr=current(), i=arr.findIndex(x=>x.id===r.id);if(i>=0)arr[i]=r;else arr.push(r);data[active]=arr;editingId=null;selectedPhoto=null;renderDatasets();renderForm();renderRecords();setStatus(`${esc(DATASETS[active].label)} record ${i>=0?'updated':'added'} in the Data Manager. Click <b>Save to project</b> to write the JSON file.`, '');
+  }catch(e){setStatus(esc(e.message),'err')}
+}
+async function saveProject(){try{if(!folder){setStatus('Connect the project folder first.','warn');return}await writeJson(DATASETS[active].file,current());setStatus(`<b>Saved:</b> data/${esc(DATASETS[active].file)} updated in the project folder.` ,'');}catch(e){setStatus('Could not save to project: '+esc(e.message),'err')}}
+function downloadCurrent(){const blob=new Blob([JSON.stringify(current(),null,2)+'\n'],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=DATASETS[active].file;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function renderRecords(){const arr=current();$('recordsTitle').textContent=`${DATASETS[active].label} • ${arr.length} record${arr.length===1?'':'s'}`;$('records').innerHTML=arr.length?arr.slice().reverse().map(r=>`<div class="record"><div class="record-head"><div><b>${esc(r.name||r.service||r.route||((r.from||'')+' → '+(r.to||''))||r.id)}</b><div class="small-note">ID: ${esc(r.id)} • ${r.verified===true?'✓ Verified':'Unverified'}</div></div><div class="row"><button class="btn small secondary" data-edit="${esc(r.id)}">Edit</button><button class="btn small danger" data-delete="${esc(r.id)}">Delete</button></div></div><pre>${esc(JSON.stringify(r,null,2))}</pre></div>`).join(''):'<div class="empty">No records in this dataset.</div>';
+  document.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>{const r=arr.find(x=>x.id===b.dataset.edit);renderForm(r||{})});
+  document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{if(confirm('Delete this record from the Data Manager?')){data[active]=arr.filter(x=>x.id!==b.dataset.delete);renderRecords();renderDatasets();}});
+}
+$('datasets').onclick=e=>{const b=e.target.closest('[data-ds]');if(!b)return;active=b.dataset.ds;editingId=null;renderDatasets();renderForm();renderRecords();setStatus('')};
+$('connect').onclick=async()=>{try{if(!window.showDirectoryPicker)throw Error('This browser does not support direct folder access. Use Chrome/Edge on localhost or use Download JSON.');folder=await window.showDirectoryPicker({mode:'readwrite'});await loadAll();setStatus('<b>Project folder connected.</b> Changes can now be saved directly into the selected Mr-Mushakk folder.','');}catch(e){if(e.name!=='AbortError')setStatus(esc(e.message),'err')}};
+$('download').onclick=downloadCurrent;
+for(const k of Object.keys(DATASETS))data[k]=[];
+renderDatasets();renderForm();renderRecords();
+</script>
+</body></html>

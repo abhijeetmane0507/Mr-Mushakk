@@ -1,0 +1,20 @@
+[
+ {
+  "id": "d001",
+  "name": "Mahalaxmi Temple",
+  "area": "Mahalaxmi",
+  "location": "Bhulabhai Desai Road, Mumbai",
+  "nearest": "Mahalaxmi",
+  "source": "Seed place; verify festival/mandal status",
+  "locationVerified": true
+ },
+ {
+  "id": "d002",
+  "name": "Mumbadevi Temple",
+  "area": "Bhuleshwar",
+  "location": "Mumbadevi Road, Mumbai",
+  "nearest": "Masjid Bunder / CSMT area",
+  "source": "Seed place; verify festival/mandal status",
+  "locationVerified": true
+ }
+]

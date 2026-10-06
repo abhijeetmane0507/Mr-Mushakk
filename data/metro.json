@@ -1,0 +1,12 @@
+[
+  {
+    "id": "m001",
+    "line": "Metro sample",
+    "from": "Ghatkopar",
+    "to": "Andheri East",
+    "first": "05:30",
+    "last": "23:30",
+    "frequency_min": 10,
+    "verified": false
+  }
+]

@@ -1,0 +1,5 @@
+{
+ "ganpati_target": 150,
+ "devi_target": 50,
+ "note": "Targets are goals only. The app shows the real loaded count and never pads with placeholders."
+}

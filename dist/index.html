@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10131f"><title>Mr Mushakk</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div class="brand"><span>🐭</span><div><b>Mr Mushakk</b><small>Smart Mumbai Journey Planner</small></div></div>
+<nav id="nav" aria-label="Main sections">
+<a href="#/home">Home</a><a href="#/plan">Plan Journey</a><a href="#/local">Local Train</a><a href="#/bus">BEST Bus</a><a href="#/metro">Metro</a>
+<a href="#/ganpati">Ganpati Mandals</a><a href="#/devi">Devi Mandals</a><a href="#/saved">Saved Places</a><a href="#/college">College Schedule</a>
+<a href="#/notifications">Notifications</a><a href="#/profile">Profile</a><a href="#/settings">Settings</a><a href="data-manager.html">Data Manager</a>
+</nav></header>
+<main id="view" aria-live="polite"><div class="section"><p class="note">Loading Mr Mushakk…</p></div></main>
+<footer>Mr Mushakk • Stored-timetable planner • Not live tracking • No AI • <a href="data-manager.html">Data Manager</a> • Verify against official sources before travel.</footer>
+<noscript><div class="section">Mr Mushakk needs JavaScript enabled.</div></noscript>
+<script src="engine.js"></script><script src="store.js"></script><script src="app.js"></script>
+<script>
+  window.MUSHAKK_OTP_ENDPOINT = "http://localhost:3001/otp";
+</script>
+<script src="otp.js"></script>
+</body></html>

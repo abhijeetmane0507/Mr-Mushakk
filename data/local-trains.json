@@ -1,0 +1,652 @@
+[
+  {
+    "id": "l001",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "06:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l002",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "06:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l003",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "06:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l004",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "06:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l005",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "07:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l006",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "07:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l007",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "07:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l008",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "07:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l009",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "08:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l010",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "08:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l011",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "08:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l012",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "08:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l013",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "09:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l014",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "09:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l015",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "09:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l016",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "09:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l017",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "10:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l018",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "10:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l019",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "10:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l020",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "10:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l021",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "11:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l022",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "11:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l023",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "11:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l024",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "11:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l025",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "12:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l026",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "12:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l027",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "12:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l028",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "12:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l029",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "13:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l030",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "13:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l031",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "13:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l032",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "13:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l033",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "14:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l034",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "14:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l035",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "14:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l036",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "14:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l037",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "15:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l038",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "15:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l039",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "15:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l040",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "15:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l041",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "16:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l042",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "16:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l043",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "16:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l044",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "16:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l045",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "17:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l046",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "17:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l047",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "17:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l048",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "17:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l049",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "18:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l050",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "18:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l051",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "18:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l052",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "18:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l053",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "19:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l054",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "19:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l055",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "19:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l056",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "19:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l057",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "20:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l058",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "20:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l059",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "20:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l060",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "20:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l061",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "21:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l062",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "21:15",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l063",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "21:30",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l064",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "21:45",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  },
+  {
+    "id": "l065",
+    "line": "Central",
+    "service": "Sample timetable entry",
+    "departure": "22:00",
+    "from": "Bhandup",
+    "to": "CSMT",
+    "days": "Mon-Sun",
+    "verified": false
+  }
+]

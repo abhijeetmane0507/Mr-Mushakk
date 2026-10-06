@@ -1,0 +1,32 @@
+[
+  {
+    "id": "b001",
+    "route": "Sample BEST route",
+    "from": "Bhandup",
+    "to": "Ghatkopar",
+    "first": "06:00",
+    "last": "23:00",
+    "frequency_min": 15,
+    "verified": false
+  },
+  {
+    "id": "b002",
+    "route": "Sample BEST route",
+    "from": "Dadar",
+    "to": "Parel",
+    "first": "06:00",
+    "last": "23:00",
+    "frequency_min": 12,
+    "verified": false
+  },
+  {
+    "id": "b003",
+    "route": "Sample BEST route",
+    "from": "Andheri",
+    "to": "Bandra",
+    "first": "06:00",
+    "last": "23:00",
+    "frequency_min": 15,
+    "verified": false
+  }
+]
