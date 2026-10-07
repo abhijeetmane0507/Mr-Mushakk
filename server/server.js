@@ -3,12 +3,16 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const crypto = require("crypto");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+
+// Serve Mr Mushakk website files
+app.use(express.static(path.join(__dirname, "..")));
 
 const otpStore = new Map();
 
@@ -51,11 +55,7 @@ app.post("/otp/request", async (req, res) => {
           name: "Mr Mushakk",
           email: process.env.BREVO_SENDER_EMAIL
         },
-        to: [
-          {
-            email
-          }
-        ],
+        to: [{ email }],
         subject: "Your Mr Mushakk OTP",
         htmlContent: `
           <div style="font-family:Arial,sans-serif">
@@ -132,6 +132,7 @@ app.post("/otp/verify", (req, res) => {
   });
 });
 
+// Start server
 app.listen(PORT, () => {
-  console.log(`Mr Mushakk OTP server running on http://localhost:${PORT}`);
+  console.log(`Mr Mushakk running on port ${PORT}`);
 });
